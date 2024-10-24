@@ -13,7 +13,7 @@ const Navbar = () => {
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
-    const [providers, setProviders] = useState(false);
+    const [providers, setProviders] = useState(null);
 
     const pathname = usePathname();
 
@@ -24,8 +24,13 @@ const Navbar = () => {
         };
 
         setAuthProviders();
+
+        // NOTE: close mobile menu if the viewport size is changed
+        window.addEventListener("resize", () => {
+            setIsMobileMenuOpen(false);
+        });
     }, []);
-    console.log(providers);
+    console.log("providers: ", providers);
 
     return (
         <nav className="bg-blue-700 border-b border-blue-500">
@@ -114,7 +119,8 @@ const Navbar = () => {
                             <div className="flex items-center">
                                 {providers && Object.values(providers).map((provider, index) => (
                                     <button
-                                        onClick={() => signIn()} key={index}
+                                        onClick={() => signIn(provider.id)}
+                                        key={index}
                                         className="flex items-center text-white bg-gray-700 hover:bg-gray-900
                                         hover:text-white rounded-md px-3 py-2">
                                         <FaGoogle className="text-white mr-2"/>
@@ -256,7 +262,8 @@ const Navbar = () => {
                           providers &&
                           Object.values(providers).map((provider, index) => (
                             <button
-                                onClick={() => signIn()} key={index}
+                                onClick={() => signIn(provider.id)}
+                                key={index}
                                 className="flex items-center text-white bg-gray-700 hover:bg-gray-900
                                     hover:text-white rounded-md px-3 py-2 my-5">
                                 <FaGoogle className="text-white mr-2"/>
