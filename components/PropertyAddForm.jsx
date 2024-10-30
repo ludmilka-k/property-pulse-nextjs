@@ -3,27 +3,27 @@ import { useState } from "react";
 
 const PropertyAddForm = () => {
     const [fields, setFields] = useState({
-            name: "Test Property",
-            type: "Apartment",
+            name: "",
+            type: "",
             description: "",
             location: {
-                street: "Street",
-                city: "Test City",
-                state: "Test State",
+                street: "",
+                city: "",
+                state: "",
                 zipcode: "",
             },
-            beds: "3",
-            baths: "2",
-            square_feet: "1500",
-            amenities: Array.from(["Free Parking"]),
+            beds: "",
+            baths: "",
+            square_feet: "",
+            amenities: Array.from([]),
             rates: {
                 weekly: "",
-                monthly: "2000",
+                monthly: "",
                 nightly: "",
             },
             seller_info: {
                 name: "",
-                email: "test@test.com",
+                email: "",
                 phone: "",
             },
             images: Array.from([]),
@@ -121,6 +121,7 @@ const PropertyAddForm = () => {
                     <option value="Apartment">Apartment</option>
                     <option value="Condo">Condo</option>
                     <option value="House">House</option>
+                    <option value="Chalet">Chalet</option>
                     <option value="CabinOrCottage">Cabin or Cottage</option>
                     <option value="Room">Room</option>
                     <option value="Studio">Studio</option>
@@ -406,14 +407,14 @@ const PropertyAddForm = () => {
                     <div>
                         <input
                             type="checkbox"
-                            id="amenity_balcony_patio"
+                            id="amenity_coffee_maker"
                             name="amenities"
-                            value="Balcony/Patio"
+                            value="Coffee Maker"
                             className="mr-2"
-                            checked={fields.amenities.includes("Balcony/Patio")}
+                            checked={fields.amenities.includes("Coffee Maker")}
                             onChange={handleAmenitiesChange}
                         />
-                        <label htmlFor="amenity_balcony_patio">Balcony/Patio</label>
+                        <label htmlFor="amenity_coffee_maker">Coffee Maker</label>
                     </div>
                     <div>
                         <input
@@ -430,14 +431,86 @@ const PropertyAddForm = () => {
                     <div>
                         <input
                             type="checkbox"
-                            id="amenity_coffee_maker"
+                            id="amenity_high-speed_internet"
                             name="amenities"
-                            value="Coffee Maker"
+                            value="High-Speed Internet"
                             className="mr-2"
-                            checked={fields.amenities.includes("Coffee Maker")}
+                            checked={fields.amenities.includes("High-Speed Internet")}
                             onChange={handleAmenitiesChange}
                         />
-                        <label htmlFor="amenity_coffee_maker">Coffee Maker</label>
+                        <label htmlFor="amenity_high-speed_internet">High-Speed Internet</label>
+                    </div>
+                    <div>
+                        <input
+                            type="checkbox"
+                            id="amenity_balcony_patio"
+                            name="amenities"
+                            value="Balcony/Patio"
+                            className="mr-2"
+                            checked={fields.amenities.includes("Balcony/Patio")}
+                            onChange={handleAmenitiesChange}
+                        />
+                        <label htmlFor="amenity_balcony_patio">Balcony/Patio</label>
+                    </div>
+                    <div>
+                        <input
+                            type="checkbox"
+                            id="amenity_outdoor_grill_bbq"
+                            name="amenities"
+                            value="Outdoor Grill/BBQ"
+                            className="mr-2"
+                            checked={fields.amenities.includes("Outdoor Grill/BBQ")}
+                            onChange={handleAmenitiesChange}
+                        />
+                        <label htmlFor="amenity_outdoor_grill_bbq">Outdoor Grill/BBQ</label>
+                    </div>
+                    <div>
+                        <input
+                            type="checkbox"
+                            id="amenity_fireplace"
+                            name="amenities"
+                            value="Fireplace"
+                            className="mr-2"
+                            checked={fields.amenities.includes("Fireplace")}
+                            onChange={handleAmenitiesChange}
+                        />
+                        <label htmlFor="amenity_fireplace">Fireplace</label>
+                    </div>
+                    <div>
+                        <input
+                            type="checkbox"
+                            id="amenity_beach_access"
+                            name="amenities"
+                            value="Beach Access"
+                            className="mr-2"
+                            checked={fields.amenities.includes("Beach Access")}
+                            onChange={handleAmenitiesChange}
+                        />
+                        <label htmlFor="amenity_beach_access">Beach Access</label>
+                    </div>
+                    <div>
+                        <input
+                            type="checkbox"
+                            id="amenity_hiking_trails_access"
+                            name="amenities"
+                            value="Hiking Trails Access"
+                            className="mr-2"
+                            checked={fields.amenities.includes("Hiking Trails Access")}
+                            onChange={handleAmenitiesChange}
+                        />
+                        <label htmlFor="amenity_hiking_trails_access">Hiking Trails Access</label>
+                    </div>
+                    <div>
+                        <input
+                            type="checkbox"
+                            id="amenity_pet-friendly"
+                            name="amenities"
+                            value="Pet-Friendly"
+                            className="mr-2"
+                            checked={fields.amenities.includes("Pet-Friendly")}
+                            onChange={handleAmenitiesChange}
+                        />
+                        <label htmlFor="amenity_pet-friendly">Pet-Friendly</label>
                     </div>
                 </div>
             </div>

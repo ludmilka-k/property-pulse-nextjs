@@ -31,7 +31,6 @@ const Navbar = () => {
             setIsMobileMenuOpen(false);
         });
     }, []);
-    console.log(profileImage);
 
     return (
         <nav className="bg-blue-700 border-b border-blue-500">
