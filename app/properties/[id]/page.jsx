@@ -7,7 +7,7 @@ import PropertyHeaderImage from "@/components/PropertyHeaderImage";
 import PropertyDetails from "@/components/PropertyDetails";
 import PropertyImages from "@/components/PropertyImages";
 import BookmarkButton from "@/components/BookmarkButton";
-import ShareButton from "@/components/ShareButton";
+import ShareButtons from "@/components/ShareButtons";
 import PropertyContactForm from "@/components/PropertyContactForm";
 import Spinner from "@/components/Spinner";
 import { FaArrowLeft } from "react-icons/fa";
@@ -61,7 +61,7 @@ const PropertyPage = () => {
                         <PropertyDetails property={property} />
                         <aside className="space-y-4">
                             <BookmarkButton property={property} />
-                            <ShareButton property={property} />
+                            <ShareButtons property={property} />
                             <PropertyContactForm property={property} />
                         </aside>
                     </div>
